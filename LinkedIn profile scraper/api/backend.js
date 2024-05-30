@@ -28,18 +28,18 @@ function connectToDatabase() {
     });
 }
 async function fetchData(link) {
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch({ headless: false });
     const page = await browser.newPage();
     const cookiesString = await fs.readFile('./cookies.json')
     const cookies = JSON.parse(cookiesString)
     await page.setCookie(...cookies)
     await page.goto(link, { waitUntil: "domcontentloaded" })
 
-    await page.waitForSelector(".text-heading-xlarge");
-    await page.waitForSelector("#about~div:nth-of-type(3)>div>div>div>span");
-    await page.waitForSelector(".mt2.relative>div:nth-of-type(2)>span");
-    await page.waitForSelector(".mt2.relative~ul>li>span");
-    await page.waitForSelector("#content_collections~div>div>div>div>p>span");
+    await page.waitForSelector('.text-heading-xlarge');
+    await page.waitForSelector('#about~div:nth-of-type(3)>div>div>div>span');
+    await page.waitForSelector('.mt2.relative>div:nth-of-type(2)>span');
+    await page.waitForSelector('#content_collections~div>div>div>div>p>span');
+    await page.waitForSelector('#content_collections~div>div>div>div>p>span');
 
 
 
