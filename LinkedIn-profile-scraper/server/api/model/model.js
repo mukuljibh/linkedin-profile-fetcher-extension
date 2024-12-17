@@ -18,9 +18,8 @@ const Schema = new mongoose.Schema({
     },
 });
 
-const userDetails = mongoose.model(
+export const userDetails = mongoose.model(
     "userDetails",
     Schema,
 );
 
-export { userDetails };

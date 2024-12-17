@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "linkdin Scrapper",
+    "version": "1.0.0",
+    "description": "Extract profile of the selected person.",
+    "action": {
+        "default_popup": "index.html"
+    },
+    "permissions": [
+        "scripting"
+    ],
+    "host_permissions": [
+        "http://*/",
+        "https://*/"
+    ]
+}
